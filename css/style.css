@@ -1,0 +1,175 @@
+/* ============================================================
+   CASSANDRA'S LUXURY CLEANING SERVICES — Design System
+   Palette sampled directly from brand logo
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Jost:wght@300;400;500;600&display=swap');
+
+:root{
+  /* Brand — sampled from logo */
+  --gold-deep:   #C08E1B;
+  --gold:        #D8B068;
+  --gold-soft:   #E4C98C;
+  --gold-bright: #F8E376;
+  --gold-line:   rgba(216,176,104,.32);
+
+  --black:       #0A0A0B;
+  --black-2:     #111114;
+  --black-3:     #18181C;
+  --char:        #1E1E22;
+  --ink:         #F5F2EA;
+  --ink-dim:     #B9B4A8;
+  --ink-faint:   #807B71;
+
+  --grad-gold: linear-gradient(135deg,#C08E1B 0%,#F8E376 38%,#D8B068 62%,#9E7415 100%);
+  --grad-gold-soft: linear-gradient(135deg,#E4C98C,#C08E1B);
+
+  --maxw: 1240px;
+  --ease: cubic-bezier(.22,.61,.36,1);
+  --shadow-lux: 0 30px 80px -30px rgba(0,0,0,.85);
+  --radius: 4px;
+
+  --font-display: 'Cormorant Garamond', Georgia, serif;
+  --font-body: 'Jost', system-ui, sans-serif;
+}
+
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  font-family:var(--font-body);
+  background:var(--black);
+  color:var(--ink);
+  line-height:1.7;
+  font-weight:300;
+  overflow-x:hidden;
+  letter-spacing:.01em;
+}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+::selection{background:var(--gold);color:var(--black)}
+
+/* grain + atmosphere */
+body::before{
+  content:"";position:fixed;inset:0;pointer-events:none;z-index:1;opacity:.04;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 32px;position:relative;z-index:2}
+
+/* ============ TYPOGRAPHY ============ */
+h1,h2,h3,h4{font-family:var(--font-display);font-weight:500;line-height:1.08;letter-spacing:-.01em}
+h1{font-size:clamp(2.8rem,7vw,5.4rem)}
+h2{font-size:clamp(2.2rem,5vw,3.8rem)}
+h3{font-size:clamp(1.4rem,2.6vw,2rem)}
+p{color:var(--ink-dim);font-weight:300}
+
+.eyebrow{
+  font-size:.74rem;letter-spacing:.32em;text-transform:uppercase;
+  color:var(--gold);font-weight:500;display:inline-block;margin-bottom:20px;
+}
+.eyebrow::before{content:"";display:inline-block;width:26px;height:1px;background:var(--gold);
+  vertical-align:middle;margin-right:14px;opacity:.7}
+
+.gold-text{
+  background:var(--grad-gold);-webkit-background-clip:text;background-clip:text;
+  -webkit-text-fill-color:transparent;color:transparent;
+}
+
+.lead{font-size:1.18rem;color:var(--ink-dim);max-width:60ch;line-height:1.75}
+
+/* ============ BUTTONS ============ */
+.btn{
+  display:inline-flex;align-items:center;gap:10px;
+  padding:16px 34px;font-family:var(--font-body);font-size:.82rem;font-weight:500;
+  letter-spacing:.14em;text-transform:uppercase;cursor:pointer;border:none;
+  transition:all .45s var(--ease);position:relative;overflow:hidden;
+}
+.btn-gold{background:var(--grad-gold);color:var(--black)}
+.btn-gold:hover{transform:translateY(-2px);box-shadow:0 16px 40px -12px rgba(216,176,104,.55)}
+.btn-ghost{background:transparent;color:var(--ink);border:1px solid var(--gold-line)}
+.btn-ghost:hover{border-color:var(--gold);color:var(--gold);background:rgba(216,176,104,.05)}
+.btn .arr{transition:transform .4s var(--ease)}
+.btn:hover .arr{transform:translateX(5px)}
+
+/* ============ HEADER ============ */
+.nav{
+  position:fixed;top:0;left:0;right:0;z-index:50;
+  padding:18px 0;transition:all .5s var(--ease);
+  background:rgba(10,10,11,.0);
+}
+.nav.scrolled{background:rgba(10,10,11,.92);backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--gold-line);padding:12px 0}
+.nav-inner{display:flex;align-items:center;justify-content:space-between}
+.brand{display:flex;align-items:center;gap:14px}
+.brand-mark{
+  width:40px;height:40px;border:1px solid var(--gold-line);border-radius:50%;
+  display:grid;place-items:center;font-family:var(--font-display);
+  color:var(--gold);font-size:1.3rem;font-weight:600;
+}
+.brand-name{font-family:var(--font-display);font-size:1.28rem;letter-spacing:.02em}
+.brand-name small{display:block;font-family:var(--font-body);font-size:.58rem;
+  letter-spacing:.34em;text-transform:uppercase;color:var(--ink-faint);font-weight:400}
+.nav-links{display:flex;align-items:center;gap:34px;list-style:none}
+.nav-links a{font-size:.82rem;letter-spacing:.08em;color:var(--ink-dim);
+  text-transform:uppercase;transition:color .3s;position:relative;font-weight:400}
+.nav-links a::after{content:"";position:absolute;left:0;bottom:-6px;width:0;height:1px;
+  background:var(--gold);transition:width .4s var(--ease)}
+.nav-links a:hover{color:var(--ink)}
+.nav-links a:hover::after{width:100%}
+.nav-phone{display:flex;align-items:center;gap:9px;color:var(--gold);
+  font-size:.9rem;letter-spacing:.04em;font-weight:400}
+.nav-cta{padding:11px 24px;font-size:.74rem}
+.burger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:6px}
+.burger span{width:26px;height:2px;background:var(--ink);transition:all .3s}
+
+/* ============ SECTION SCAFFOLD ============ */
+.sec{padding:120px 0;position:relative}
+.sec-head{max-width:680px;margin-bottom:64px}
+.sec-head.center{margin-left:auto;margin-right:auto;text-align:center}
+
+/* reveal */
+.reveal{opacity:0;transform:translateY(28px);transition:opacity 1s var(--ease),transform 1s var(--ease)}
+.reveal.in{opacity:1;transform:none}
+
+/* ============ FOOTER ============ */
+.footer{background:var(--black-2);border-top:1px solid var(--gold-line);padding:80px 0 36px}
+.foot-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr 1.2fr;gap:48px;margin-bottom:56px}
+.foot-grid h4{color:var(--gold);font-size:1.05rem;margin-bottom:22px;letter-spacing:.04em}
+.foot-col p,.foot-col a{font-size:.92rem;color:var(--ink-dim);display:block;margin-bottom:12px;transition:color .3s}
+.foot-col a:hover{color:var(--gold)}
+.foot-brand p{margin-top:18px;max-width:34ch}
+.foot-bottom{border-top:1px solid rgba(216,176,104,.12);padding-top:28px;
+  display:flex;justify-content:space-between;flex-wrap:wrap;gap:14px;
+  font-size:.8rem;color:var(--ink-faint);letter-spacing:.04em}
+
+/* ============ FLOATING CALL (mobile) ============ */
+.float-call{
+  position:fixed;right:20px;bottom:20px;z-index:60;display:none;
+  width:60px;height:60px;border-radius:50%;background:var(--grad-gold);
+  place-items:center;box-shadow:0 12px 30px -8px rgba(216,176,104,.6);
+  color:var(--black);font-size:1.5rem;
+}
+
+/* ============ RESPONSIVE ============ */
+@media(max-width:980px){
+  .foot-grid{grid-template-columns:1fr 1fr;gap:36px}
+}
+@media(max-width:768px){
+  .nav-links,.nav-phone{display:none}
+  .nav-links.open{display:flex;position:absolute;top:100%;left:0;right:0;
+    flex-direction:column;background:rgba(10,10,11,.97);padding:28px 32px;gap:20px;
+    border-bottom:1px solid var(--gold-line)}
+  .burger{display:flex}
+  .float-call{display:grid}
+  .sec{padding:84px 0}
+  .foot-grid{grid-template-columns:1fr;gap:30px}
+}
+
+
+/* ---- LOGO IMAGE (added) ---- */
+.brand-logo{height:96px;width:auto;display:block}
+.foot-brand .brand-logo{height:140px;margin-bottom:8px}
+@media(max-width:560px){.brand-logo{height:66px}}
+
+/* reveal-failsafe: never let content stay invisible if JS is blocked */
+.no-js .reveal{opacity:1!important;transform:none!important}
