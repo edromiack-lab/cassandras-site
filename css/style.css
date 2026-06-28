@@ -167,9 +167,11 @@ p{color:var(--ink-dim);font-weight:300}
 
 
 /* ---- LOGO IMAGE (added) ---- */
-.brand-logo{height:96px;width:auto;display:block}
-.foot-brand .brand-logo{height:140px;margin-bottom:8px}
-@media(max-width:560px){.brand-logo{height:66px}}
+.brand-logo{height:120px;width:auto;display:block}
+.foot-brand .brand-logo{height:190px;margin-bottom:8px}
+@media(max-width:560px){.brand-logo{height:92px}}
 
 /* reveal-failsafe: never let content stay invisible if JS is blocked */
 .no-js .reveal{opacity:1!important;transform:none!important}
+
+.foot-trust{color:var(--gold);font-size:.82rem;margin-top:10px;letter-spacing:.02em}
