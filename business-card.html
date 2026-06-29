@@ -1,0 +1,60 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;1,600&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#2a2a2a;display:flex;flex-direction:column;align-items:center;gap:34px;padding:40px;font-family:'Jost',sans-serif}
+.card{width:1050px;height:600px;position:relative;overflow:hidden;
+  background:radial-gradient(ellipse 70% 80% at 72% 18%,#211d16,#0c0c0e 62%)}
+.frame{position:absolute;inset:16px;border:1.5px solid rgba(216,176,104,.5);pointer-events:none;z-index:5}
+/* FRONT: logo hero */
+.front{display:flex;align-items:center;justify-content:center}
+.front img{max-width:78%;max-height:80%;object-fit:contain;filter:drop-shadow(0 6px 26px rgba(0,0,0,.6))}
+/* BACK: info */
+.back{display:flex;color:#efe9dd}
+.back .l{width:46%;display:flex;align-items:center;justify-content:center;padding:30px;border-right:1px solid rgba(216,176,104,.3)}
+.back .l img{max-width:100%;max-height:74%;object-fit:contain}
+.back .r{width:54%;padding:54px 48px;display:flex;flex-direction:column;justify-content:center}
+.tag{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:34px;color:#E8C877;line-height:1.1;margin-bottom:14px}
+.rule{height:1.5px;background:linear-gradient(90deg,#E8C877,#C08E1B,transparent);margin-bottom:18px}
+.svc{font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;color:#C9A24B;line-height:2;margin-bottom:20px}
+.contact{font-size:15.5px;line-height:1.95;letter-spacing:.01em}
+.contact .ic{color:#E8C877;display:inline-block;width:22px}
+.area{font-size:13px;color:#b3ad9f;margin-top:6px}
+.ins{margin-top:20px;align-self:flex-start;font-size:12px;color:#1a1408;
+  background:linear-gradient(90deg,#F0D58A,#C08E1B);padding:8px 16px;border-radius:5px;
+  font-weight:500;letter-spacing:.04em}
+.qr{position:absolute;right:46px;bottom:46px;width:118px;height:118px;background:#fff;
+  border:4px solid #C08E1B;border-radius:10px;padding:6px;z-index:6}
+.qr img{width:100%;height:100%;display:block}
+.qrcap{position:absolute;right:36px;bottom:24px;width:138px;text-align:center;
+  font-size:9px;letter-spacing:.16em;text-transform:uppercase;color:#C9A24B;z-index:6}
+.lbl{color:#888;font-size:13px;letter-spacing:.2em;text-transform:uppercase}
+</style></head>
+<body>
+<div class="lbl">Front</div>
+<div class="card front">
+  <div class="frame"></div>
+  <img src="https://img1.wsimg.com/isteam/ip/facedfd9-1ae8-40a4-b935-2f7fda9affc3/1000065386.JPG/:/rs=h:900">
+</div>
+
+<div class="lbl">Back</div>
+<div class="card back">
+  <div class="frame"></div>
+  <div class="l"><img src="https://img1.wsimg.com/isteam/ip/facedfd9-1ae8-40a4-b935-2f7fda9affc3/1000065386.JPG/:/rs=h:900"></div>
+  <div class="r">
+    <div class="tag">Where Luxury<br>Meets Clean</div>
+    <div class="rule"></div>
+    <div class="svc">Luxury Turnovers &nbsp;&middot;&nbsp; Post-Construction<br>Residential &nbsp;&middot;&nbsp; Commercial</div>
+    <div class="contact">
+      <div><span class="ic">&#9742;</span>(929) 821-0747</div>
+      <div><span class="ic">&#9993;</span>keith@cassandrasluxurycleaningservices.com</div>
+      <div><span class="ic">&#127760;</span>www.cassandrasluxurycleaningservice.com</div>
+      <div class="area">Serving Hudson County, NJ &amp; surrounding areas</div>
+    </div>
+    <div class="ins">&#10003; FULLY INSURED &middot; GEN. LIABILITY &amp; WORKERS' COMP</div>
+  </div>
+  <div class="qr"><img src="https://api.qrserver.com/v1/create-qr-code/?size=300x300&margin=0&data=https%3A%2F%2Fcassandras-site.vercel.app"></div>
+  <div class="qrcap">Scan to visit</div>
+</div>
+</body></html>
