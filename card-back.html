@@ -1,0 +1,57 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<title>Cassandra's Business Card — BACK</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;1,600&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+@page{size:3.5in 2in;margin:0}
+body{background:#333;display:flex;justify-content:center;align-items:center;min-height:100vh;font-family:'Jost',sans-serif}
+.card{width:1050px;height:600px;position:relative;overflow:hidden;
+  background:radial-gradient(ellipse 70% 80% at 72% 18%,#211d16,#0c0c0e 62%);
+  -webkit-print-color-adjust:exact;print-color-adjust:exact;display:flex;color:#efe9dd}
+.frame{position:absolute;inset:16px;border:1.5px solid rgba(216,176,104,.5);pointer-events:none;z-index:5}
+.l{width:42%;display:flex;align-items:center;justify-content:center;padding:28px;border-right:1px solid rgba(216,176,104,.3)}
+.l img{max-width:100%;max-height:78%;object-fit:contain;mix-blend-mode:screen}
+.r{width:58%;padding:46px 42px;display:flex;flex-direction:column;justify-content:center}
+.tag{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:31px;color:#E8C877;line-height:1.1;margin-bottom:12px}
+.rule{height:1.5px;background:linear-gradient(90deg,#E8C877,#C08E1B,transparent);margin-bottom:16px}
+.svc{font-size:11px;letter-spacing:.15em;text-transform:uppercase;color:#C9A24B;line-height:1.95;margin-bottom:16px}
+.contact{font-size:14.5px;line-height:1.85;letter-spacing:.01em}
+.contact .ic{color:#E8C877;display:inline-block;width:22px}
+.area{font-size:12.5px;color:#b3ad9f;margin-top:5px}
+.footrow{display:flex;align-items:center;gap:18px;margin-top:20px}
+.ins{flex:1;font-size:11.5px;color:#1a1408;background:linear-gradient(90deg,#F0D58A,#C08E1B);
+  padding:9px 14px;border-radius:5px;font-weight:500;letter-spacing:.03em;line-height:1.45}
+.qrwrap{flex-shrink:0;text-align:center}
+.qr{width:104px;height:104px;background:#fff;border:3px solid #C08E1B;border-radius:9px;padding:6px}
+.qr img{width:100%;height:100%;display:block}
+.qrcap{margin-top:5px;font-size:8.5px;letter-spacing:.16em;text-transform:uppercase;color:#C9A24B}
+@media print{
+  body{background:#fff;display:block;min-height:0}
+  .card{position:fixed;top:0;left:0;transform:scale(.32);transform-origin:top left}
+}
+</style></head>
+<body>
+<div class="card">
+  <div class="frame"></div>
+  <div class="l"><img src="https://img1.wsimg.com/isteam/ip/facedfd9-1ae8-40a4-b935-2f7fda9affc3/1000065386.JPG/:/rs=h:900"></div>
+  <div class="r">
+    <div class="tag">Where Luxury<br>Meets Clean</div>
+    <div class="rule"></div>
+    <div class="svc">Luxury Turnovers &nbsp;&middot;&nbsp; Post-Construction<br>Residential &nbsp;&middot;&nbsp; Commercial</div>
+    <div class="contact">
+      <div><span class="ic">&#9742;</span>(929) 821-0747</div>
+      <div><span class="ic">&#9993;</span>keith@cassandrasluxurycleaningservices.com</div>
+      <div><span class="ic">&#127760;</span>www.cassandrasluxurycleaningservice.com</div>
+      <div class="area">Serving Hudson County, NJ &amp; surrounding areas</div>
+    </div>
+    <div class="footrow">
+      <div class="ins">&#10003; FULLY INSURED<br>General Liability &amp; Workers' Comp</div>
+      <div class="qrwrap">
+        <div class="qr"><img src="https://api.qrserver.com/v1/create-qr-code/?size=300x300&margin=0&data=https%3A%2F%2Fcassandras-site.vercel.app"></div>
+        <div class="qrcap">Scan to visit</div>
+      </div>
+    </div>
+  </div>
+</div>
+</body></html>
